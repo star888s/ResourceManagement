@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  terraform:
+    build: ./main
+    image: lastest
+    volumes:
+      - type: bind
+        source: "./.aws"
+        target: "/root/.aws"
+      - type: bind
+        source: "./main"
+        target: "/home/main/"
+    tty: true
